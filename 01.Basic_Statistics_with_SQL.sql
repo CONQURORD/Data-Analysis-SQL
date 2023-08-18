@@ -1,4 +1,4 @@
-/************ Basic Statistics with SQL ************/
+
 
 SELECT * FROM company_divisions
 LIMIT 5;
@@ -37,7 +37,6 @@ FROM staff;
 
 
 /* what about salary distribution by gender group? */
-/* Data Interpretation: It seems like the average between male and female group is pretty close, with slighly higher average salary for Female group*/
 SELECT gender, MIN(salary) As Min_Salary, MAX(salary) AS Max_Salary, AVG(salary) AS Average_Salary
 FROM staff
 GROUP BY gender;
@@ -49,7 +48,6 @@ FROM staff;
 
 
 /* want to know distribution of min, max average salary by department */
-/* Data Interpretation: It seems like Outdoors deparment has the highest average salary paid  and Jewelery department with lowest */ 
 SELECT
 	department, 
 	MIN(salary) As Min_Salary, 
@@ -62,8 +60,6 @@ ORDER BY 4 DESC;
 
 
 /* how spread out those salary around the average salary in each department ? */
-/* Data Interpretation: Although average salary for Outdoors is highest among deparment, it seems like data points
-are pretty close to average salary compared to other departments. */
 SELECT 
 	department, 
 	MIN(salary) As Min_Salary, 
@@ -78,7 +74,7 @@ ORDER BY 4 DESC;
 
 
 /* which department has the highest salary spread out ? */
-/* Data Interpretation: based on the findings, Health department has the highest spread out. So let's find out more */
+
 SELECT 
 	department, 
 	MIN(salary) As Min_Salary, 
@@ -141,15 +137,9 @@ FROM outdoors_dept_earning_status
 GROUP BY 1;
 
 
-/* 
-After comparing to Health department with Outdoors department, there are higher numbers of middle 
-and low earners buckets in Health than Outdoors. So from those salary earners point of view, the average salary
-for Outdoors deparment may be a little bit more stretch than Outdoors deparment which has more high earners.
-That's why salary standard deviation value of Health is highest among all departments.
-*/
 
 
--- drop the unused views
+
 DROP VIEW health_dept_earning_status;
 DROP VIEW outdoors_dept_earning_status;
 
