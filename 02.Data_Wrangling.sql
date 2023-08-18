@@ -1,4 +1,4 @@
-/**************** Data Wrangling / Data Munging *************/
+
 
 SELECT DISTINCT(department)
 FROM staff
@@ -61,7 +61,7 @@ ORDER BY 1;
 
 
 /********* Extracting Strings from Characters *********/
--- SUBSTRING('string' FROM position FOR how_many)
+
 
 ---------------------- SubString words ----------------------------------------------------
 SELECT 'abcdefghijkl' as test_string;
@@ -108,11 +108,10 @@ WHERE job_title LIKE 'Assistant%';
 --------------------------------------------------------------------------------------------
 
 /********* Filtering with Regualar Expressions *********/
--- SIMILAR TO
+
 
 /* We want to know job title with Assistant with Level 3 and 4 */
--- we will put the desired words into group
--- Pipe character | is for OR condition 
+
 SELECT
 	job_title
 FROM staff
@@ -138,10 +137,7 @@ WHERE job_title SIMILAR TO '[EPS]%';
 --------------------------------------------------------------------------------------------
 
 /********* Reformatting Numerics Data *********/
--- TRUNC() Truncate values Note: trunc just truncate value, not rounding value.
--- CEIL
--- FLOOR
--- ROUND
+
 
 SELECT 
 	department, 
